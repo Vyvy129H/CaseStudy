@@ -114,14 +114,14 @@ public class LibraryExecute {
             System.out.println("Enter new author: ");
             String updateNewAuthor = new Scanner(System.in).nextLine();
             System.out.println("Enter new publisher: ");
-            String updateNewReleaseYear = new Scanner(System.in).next();
+            String updateNewPublisher = new Scanner(System.in).next();
             System.out.println("Enter new genre: ");
             String updateNewGenre = new Scanner(System.in).nextLine();
             System.out.println("Enter new size: ");
             String updateNewSize = new Scanner(System.in).nextLine();
             System.out.println("Enter new format: ");
             String updateNewFormat = new Scanner(System.in).next();
-            admin.getEbook(id).setEbook(updateNewId, updateNewTitle, updateNewAuthor, updateNewReleaseYear, updateNewGenre, updateNewSize, updateNewFormat);
+            admin.getEbook(id).setEbook(updateNewId, updateNewTitle, updateNewAuthor, updateNewPublisher, updateNewGenre, updateNewSize, updateNewFormat);
         }
 
         public int searchMenu() {
@@ -147,7 +147,7 @@ public class LibraryExecute {
             }
         }
 
-        public void searchByReleaseYear() {
+        public void searchByPublisher() {
             System.out.print("Enter Publisher: ");
             for (Ebook e : admin.searchEbooks(new EbookSearchByPublisher(), new Scanner(System.in).nextLine())) {
                 System.out.println(e);
@@ -219,7 +219,7 @@ public class LibraryExecute {
                     searchByAuthor();
                     break;
                 case 3:
-                    searchByReleaseYear();
+                    searchByPublisher();
                     break;
                 case 4:
                     break;
